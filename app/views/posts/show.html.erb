@@ -2,3 +2,15 @@
 	<%= @post.title %><br>
 	<%= @post.description %>
 </h1>
+
+<ul>
+	<% @project.comments.each do |comment| %>
+	<li><%= comment.title %></li>
+	<% end %>
+	<li>
+	<%= form_for [@post, @post.comment.build] do |f| %>
+	<%= f.text_field :title %>
+	<%= f.submit %>
+	<% end %>
+	</li>
+</ul>
