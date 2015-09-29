@@ -7,6 +7,9 @@
 	<%= f.text_field :title %><br>
 	<%= f.label :description %><br>
 	<%= f.text_field :description %>
+	<% if @post.errors.any? %>
+	<%= @post.errors.messages[:title][0] %>
+	<% end %>
 
 </p>
 
