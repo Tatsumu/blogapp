@@ -4,12 +4,12 @@
 </h1>
 
 <ul>
-	<% @project.comments.each do |comment| %>
+	<% @post.comments.each do |comment| %>
 	<li><%= comment.title %></li>
 	<% end %>
 	<li>
-	<%= form_for [@post, @post.comment.build] do |f| %>
-	<%= f.text_field :title %>
+	<%= form_for [@post, @post.comments.build] do |f| %>
+	<%= f.text_field :title, :description %>
 	<%= f.submit %>
 	<% end %>
 	</li>
