@@ -5,7 +5,10 @@
 
 <ul>
 	<% @post.comments.each do |comment| %>
-	<li><%= comment.body %></li>
+	<li>
+		<%= comment.body %>
+		<%= link_to "[Delete]", post_comment_path(comment.post.id, comment.id),method: :delete, data:{ confirm: "本当に消してもいいですか?" } %>
+	</li>
 	<% end %>
 	<li>
 	<%= form_for [@post, @post.comments.build] do |f| %>
