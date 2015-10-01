@@ -5,11 +5,11 @@
 
 <ul>
 	<% @post.comments.each do |comment| %>
-	<li><%= comment.title %></li>
+	<li><%= comment.body %></li>
 	<% end %>
 	<li>
 	<%= form_for [@post, @post.comments.build] do |f| %>
-	<%= f.text_field :title, :description %>
+	<%= f.text_field :body %>
 	<%= f.submit %>
 	<% end %>
 	</li>
