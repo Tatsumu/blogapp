@@ -1,12 +1,12 @@
 <h1>Posts</h1>
 
 <ul>
-	<% @posts.each do |post| %>
-	<li><%= link_to post.title, post_path(post.id) %>
-		<%= link_to "[Edit]", edit_post_path(post.id) %>
-		<%= link_to "[Delete]", post_path(post.id),method: :delete, data:{ confirm: "本当に消してもいいですか?" } %>
+	<% @posts.each do |post| %><!-- postをループさせる -->
+	<li><%= link_to post.title, post_path(post.id) %><!-- postのtitle名がpost詳細画面のリンクになる -->
+		<%= link_to "[Edit]", edit_post_path(post.id) %><!-- 編集画面へのリンク -->
+		<%= link_to "[Delete]", post_path(post.id),method: :delete, data:{ confirm: "本当に消してもいいですか?" } %><!-- 消去する際にメッセージをアラート -->
 	</li>
 	<% end %>
 </ul>
 
-<p><%= link_to "Add New", new_post_path %></p>
+<p><%= link_to "Add New", new_post_path %></p><!-- 新規追加のリンク -->

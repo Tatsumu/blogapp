@@ -1,18 +1,18 @@
-<%= form_for @post do |f| %>
+<%= form_for @post do |f| %><!--新規作成画面を作るために必要なformを用意  -->
 
 <p>
-	<%= f.label :title %><br>
-	<%= f.text_field :title %><br>
-	<%= f.label :description %><br>
-	<%= f.text_field :description %>
-	<% if @post.errors.any? %>
-	<%= @post.errors.messages[:title][0] %>
+	<%= f.label :title %><br><!--titleを表示  -->
+	<%= f.text_field :title %><br><!--titleを書き込む欄  -->
+	<%= f.label :description %><br><!--descriptionを表示  -->
+	<%= f.text_field :description %><!--descriptionを書き込む欄  -->
+	<% if @post.errors.any? %><!--validateに引っかかってerrorが出たら  -->
+	<%= @post.errors.messages[:title][0] %><!-- エラーメッセージの一番目を表示 -->
 	<% end %>
 
 </p>
 
 <p>
-	<%= f.submit %>
+	<%= f.submit %><!-- ボタン -->
 </p>
 
 <% end %>

@@ -1,19 +1,19 @@
 <h1>
-	<%= @post.title %><br>
-	<%= @post.description %>
+	<%= @post.title %><br><!-- postのtitleを表示 -->
+	<%= @post.description %><!-- postのdescriptionを表示 -->
 </h1>
 
 <ul>
-	<% @post.comments.each do |comment| %>
+	<% @post.comments.each do |comment| %><!-- commentをループさせる -->
 	<li>
-		<%= comment.body %>
-		<%= link_to "[Delete]", post_comment_path(comment.post.id, comment.id),method: :delete, data:{ confirm: "本当に消してもいいですか?" } %>
+		<%= comment.body %><!-- commentのbodyを表示 -->
+		<%= link_to "[Delete]", post_comment_path(comment.post.id, comment.id),method: :delete, data:{ confirm: "本当に消してもいいですか?" } %><!-- commentを消す際にアラート -->
 	</li>
 	<% end %>
 	<li>
-	<%= form_for [@post, @post.comments.build] do |f| %>
-	<%= f.text_field :body %>
-	<%= f.submit %>
+	<%= form_for [@post, @post.comments.build] do |f| %><!--  -->
+	<%= f.text_field :body %><!-- commentのbodyを書き込む欄 -->
+	<%= f.submit %><!-- ボタン -->
 	<% end %>
 	</li>
 </ul>

@@ -1,10 +1,10 @@
 Blogapp::Application.routes.draw do
 
   resources :posts do
-    resources :comments, only:[:create, :destroy]
+    resources :comments, only:[:create, :destroy]#commentのcreateとdestroyのroutingの設定
   end
 
-  root 'posts#index'
+  root 'posts#index'#postのroutingの設定
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
