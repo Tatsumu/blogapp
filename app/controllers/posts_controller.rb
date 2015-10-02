@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 	end
 
 	def create#createメソッドを定義
-		@post =  Post.new(project_params)#postをproject_paramsで取得し作成
+		@post =  Post.new(post_params)#postをpost_paramsで取得し作成
 		if @post.save#postを保存した場合
 			redirect_to posts_path#post一覧に戻る
 		else#保存しなかった場合(validationに引っかかった場合)
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 	end
 
 	def update#updateメソッドを定義
-		if @post.update(project_params)#postを更新した場合
+		if @post.update(post_params)#postを更新した場合
 			redirect_to posts_path#post一覧に移動
 		else#更新しなかった場合
 			render 'edit'#編集画面に戻る
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
 
 	private#他から参照できなくなる
 
-		def project_params#project_paramsを定義
+		def post_params#post_paramsを定義
 			params[:post].permit(:title, :description)#postのtitle,descriptionを許可
 		end
 
