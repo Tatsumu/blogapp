@@ -4,7 +4,7 @@
 </h1>
 
 <ul>
-	<% @post.comments.each do |comment| %><!-- commentをループさせる -->
+	<% @post.comments.each do |comment| %><!-- インスタンス変数postの子であるcommentをループさせる -->
 	<li>
 		<%= comment.body %><!-- commentのbodyを表示 -->
 		<%= link_to "[Delete]", post_comment_path(comment.post.id, comment.id),method: :delete, data:{ confirm: "本当に消してもいいですか?" } %><!-- commentを消す際にアラート -->

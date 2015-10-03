@@ -1,39 +1,39 @@
 class PostsController < ApplicationController
 
-	before_action :set_project, only:[:show, :edit, :update, :destroy]#show,edit,update,destroyメソッドのみset_projectアクションを最初に行う
+	before_action :set_project, only:[:show, :edit, :update, :destroy]#show,edit,update,destroyメソッドのみset_projectメソッドを最初に行う
 
-	def index#indexメソッドを定義
-		@posts = Post.all#post一覧を表示
+	def index#indexクラスを定義
+		@posts = Post.all#postテーブルから全てのレコードを取得
 	end
 
-	def show#show methodを定義
+	def show#showクラスを定義
 	end
 
-	def new#new メソッドを定義
-		@post = Post.new#postを追加
+	def new#newクラスを定義
+		@post = Post.new#postモデルを作成
 	end
 
-	def create#createメソッドを定義
-		@post =  Post.new(post_params)#postをpost_paramsで取得し作成
-		if @post.save#postを保存した場合
+	def create#createクラスを定義
+		@post =  Post.new(post_params)#post_paramsを受け取りモデルを作成
+		if @post.save#postをデータベースに保存した場合
 			redirect_to posts_path#post一覧に戻る
 		else#保存しなかった場合(validationに引っかかった場合)
-			render 'new'#新規作成画面に戻る
+			render 'new'#add画面に戻る
 		end
 	end
 
-	def edit#editメソッドを定義
+	def edit#editクラスを定義
 	end
 
-	def update#updateメソッドを定義
-		if @post.update(post_params)#postを更新した場合
-			redirect_to posts_path#post一覧に移動
-		else#更新しなかった場合
+	def update#updateクラスを定義
+		if @post.update(post_params)#postを変更した場合
+			redirect_to posts_path#post一覧に接続
+		else#変更できなかった場合
 			render 'edit'#編集画面に戻る
 		end
 	end
 
-	def destroy#destroyメソッドを定義
+	def destroy#destroyクラスを定義
 		@post.destroy#postを削除
 		redirect_to posts_path#post一覧に戻る
 	end
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
 	private#他から参照できなくなる
 
 		def post_params#post_paramsを定義
-			params[:post].permit(:title, :description)#postのtitle,descriptionを許可
+			params[:post].permit(:title, :description)#postのtitle,descriptionを許可してデータに保存できる状態にする
 		end
 
 		def set_project#set_projectを定義

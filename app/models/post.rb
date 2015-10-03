@@ -1,4 +1,4 @@
 class Post < ActiveRecord::Base
-	has_many :comments#commentとの関連付け　postには複数のcommentがつく
+	has_many :comments#commentと親子の関係にする　コメントは子
 	validates :title, :description, presence: true#postのbodyとdescriptionが空だったらvalidate
 end

@@ -1,4 +1,4 @@
-Blogapp::Application.routes.draw do
+Blogapp::Application.routes.draw do#routingの設定
 
   resources :posts do
     resources :comments, only:[:create, :destroy]#commentのcreateとdestroyのroutingの設定
