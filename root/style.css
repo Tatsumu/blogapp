@@ -1,0 +1,148 @@
+html {
+    position: relative;
+    background-image: url(bg.png);
+    background-size: cover;
+    -webkit-background-size: cover;
+    -ms-background-size: cover;
+    -moz-background-size: cover;
+}
+.container, body, html {
+    height: 100%;
+    min-height: 768px;
+}
+body, html, li, p, ul {
+    margin: 0;
+    padding: 0;
+}
+body{
+    font: 14px/1.5em PingHei,Lucida Grande,Lucida Sans Unicode,Helvetica,Arial,Verdana,"sans-serif";
+    color: #fff;
+}
+.img {
+    width: 25%;
+    margin-left: 9%;
+    float: left;
+    clear: left;
+}
+.content {
+    text-align: center;
+    padding-top: 4%;
+    max-width: 1280px;
+    min-width: 400px;
+    min-height: 650px;
+    margin: 0 auto;
+/*    float: left;*/
+}
+.iphone{
+    max-width: 100%;
+}
+.main {
+    display: inline-block;
+    zoom: 1;
+    margin-top: 70px;
+    margin-left: 4%;
+    margin-right: 4%;
+    min-width: 350px;
+    width: 54%;
+    vertical-align: top;
+    float: left;
+}
+.brand{
+    width: 100%;
+}
+.logo {
+    width: 83px;
+    height: 83px;
+}
+.logo img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.bg_slogan, .logo {
+    display: block;
+    margin: 0 auto 25px;
+}
+.bg_slogan {
+    width: 700px;
+}
+.btn {
+    position: relative;
+    display: inline-block;
+    width: 173px;
+    height: 51px;
+    margin-bottom: 40px;
+    -ms-background-size: 100%;
+    background-size: 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+a {
+    text-decoration: none;
+    color: #ccc;
+}
+#page_footer.footer {
+    background: none;
+    color: #ccc;
+    padding: 0;
+    margin-top: -45px;
+    height: 45px;
+}
+.footer {
+    position: relative;
+    font-size: 12px;
+    text-align: center;
+    background: #eee;
+    padding: 50px 0 80px;
+    width: 100%;
+}
+.footer_inner {
+    padding-top: 11.5px;
+    border-top: 1px solid hsla(0,0%,100%,.12);
+    margin: 0 auto;
+}
+.footer_ele{
+    display: inline-block;
+    margin: 0 auto;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+.copyright{
+    padding-right: 20px;
+}
+@media screen and (max-width: 636px){
+    .container{
+        width: 100%;
+    }
+    .content {
+        padding-top: 5%;
+        width: 100%;
+        margin: 0 auto;
+        float: left;
+    }
+    .img {
+        width: 100%;
+        margin: 0 auto;
+        float: left;
+        clear: left;
+    }
+    .iphone{
+        width: 30%;
+        margin: 0 auto;
+    }
+    .main{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .brand{
+        padding-top: 5%;
+        margin: 0 auto;
+        width: 75%;
+    }
+    .logo img{
+        display: none;
+    }
+    .bg_slogan{
+        margin-top: -30%;
+        width: 100%;
+    }
+}
